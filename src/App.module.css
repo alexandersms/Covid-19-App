@@ -1,7 +1,16 @@
 body {
     background-color: rgb(220, 221, 225);
 }
+/*
+figure {
+    margin-top: -60px;
+    margin-bottom: -100px;
+}
 
+img {
+    width: 450px;
+}
+*/
 .container {
     display: flex;
     align-items: center;

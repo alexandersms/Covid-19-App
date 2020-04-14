@@ -8,7 +8,7 @@ forme des cartes.<br />
 
 Ce projet a été démarré avec [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Scripts disponibles
 
 Dans le répertoire du projet, vous pouvez exécuter:
 
