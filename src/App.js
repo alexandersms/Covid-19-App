@@ -1,36 +1,15 @@
 import React from "react";
-import { Cards, Chart, Country } from "./components";
-import styles from "./App.module.css";
-import { fetchData } from "./api";
-//import logo from "./assets/covid-19-logo.png";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Stats from "./Stats/Stats";
+import Home from "./components/Home/Home";
 
 class App extends React.Component {
-  state = {
-    data: {},
-    country: ""
-  };
-
-  async componentDidMount() {
-    const data = await fetchData();
-    this.setState({
-      data
-    });
-  }
-
-  handleChangeCountry = async country => {
-    const fetchedData = await fetchData(country);
-
-    this.setState({ data: fetchedData, country: country });
-  };
-
   render() {
-    const { data, country } = this.state;
     return (
-      <div className={styles.container}>
-        <Cards data={data} />
-        <Country handleChangeCountry={this.handleChangeCountry} />
-        <Chart data={data} country={country} />
-      </div>
+      <Router>
+        <Route path="/" exact component={Home} />
+        <Route path="/statistics" exact component={Stats} />
+      </Router>
     );
   }
 }
