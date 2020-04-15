@@ -1,6 +1,7 @@
 import React from "react";
 import { Cards, Chart, Country } from "../components";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import styles from "./Stats.module.css";
 import { fetchData } from "../api";
 import logoCorona from "../assets/covid-19-logo.png";
@@ -28,6 +29,9 @@ class App extends React.Component {
     const { data, country } = this.state;
     return (
       <div className={styles.container}>
+        <Helmet>
+          <title>COVID-19 Tracker App - Statistics</title>
+        </Helmet>
         <Link to="/">
           <img
             className={styles.image}
